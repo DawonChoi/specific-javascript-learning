@@ -1,1 +1,1 @@
-# Specific Javascript Learing
+# Specific Javascript Learning
