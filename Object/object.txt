@@ -1,0 +1,37 @@
+## javascript object - property ##
+
+data property
+accessor property : get set
+
+# 내부 프로퍼티
+object에는 property value의 특성을 정의하는
+property 속성들(내부 프로퍼티들 [[]]로 표기)이 있다.
+- [[Value]]
+- [[Get]]
+- [[Set]]
+- [[Writable]]
+- [[Enumerable]]
+- [[Configurable]] -> enumerable, get, set 고정
+
+# Object.method
+- Object.getOwnPropertyDescriptor(property, key)
+data property와 accessor property의 내부 프로퍼티들을 return
+
+- Object.defineProperty(object, property, inner property)
+writable, enumerable, configurable에 대한 default는 false
+
+- Object.preventExtensions
+object에 새로운 프로퍼티가 추가되지 않도록 함. 변경과 삭제는 가능
+
+- Object.seal
+Object의 property 추가/삭제를 막음
+
+- Object.freeze (Strongest Prevention)
+Object의 property 추가/수정/삭제를 막음, 내부적으로 Object.seal을 호출
+
+# Object prevention summary
+                    조회  추가  수정  삭제
+preventExtensions    O     X     O     O
+seal                 O     X     O     X
+freeze               O     X     X     X
+-----------------------------------------------------------------
